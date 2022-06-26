@@ -16,22 +16,22 @@ public class Customer {
    public String getName (){
       return _name;
    }
-   private double amountFor(Rental each) {
+   private double amountFor(Rental aRental) {
       //Adicionar o trecho de código extraído.
       double thisAmount = 0; 
-      switch (each.getMovie().getPriceCode()) {
+      switch (aRental.getMovie().getPriceCode()) {
          case Movie.REGULAR:
          thisAmount += 2;
-            if (each.getDaysRented() > 2)
-              return thisAmount += (each.getDaysRented() - 2) * 1.5;
+            if (aRental.getDaysRented() > 2)
+              return thisAmount += (aRental.getDaysRented() - 2) * 1.5;
             
          case Movie.NEW_RELEASE:
-         return thisAmount += each.getDaysRented() * 3;
+         return thisAmount += aRental.getDaysRented() * 3;
             
          case Movie.CHILDRENS:
             thisAmount += 1.5;
-            if (each.getDaysRented() > 3)
-            return thisAmount += (each.getDaysRented() - 3) * 1.5;
+            if (aRental.getDaysRented() > 3)
+            return thisAmount += (aRental.getDaysRented() - 3) * 1.5;
          default:
             throw new java.lang.Error("this is very bad");
       }
